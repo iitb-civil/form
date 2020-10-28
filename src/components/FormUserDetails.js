@@ -35,10 +35,10 @@ export class FormUserDetails extends Component {
 						/>
 						<br/>
 						<TextField 
-							hintText="Enter Your Occupation"
-							floatingLabelText="Occupation"
-							onChange={handleChange('occupation')}
-							defaultValue={values.occupation}
+							hintText="Enter Your Mobile Number"
+							floatingLabelText="Mobile No."
+							onChange={handleChange('mobile')}
+							defaultValue={values.mobile}
 						/>
 						<br/>
 						<RaisedButton 

@@ -1,5 +1,5 @@
 {
-  "home": "https://iitb-civil.github.io/form/",
+  "home": ".",
   "name": "form-deploy",
   "version": "0.1.0",
   "private": true,
