@@ -23,8 +23,8 @@ export class FormUserDetails extends Component {
 						<TextField 
 							hintText="Enter Your Full Name"
 							floatingLabelText="Full Name"
-							onChange={handleChange('fullName')}
-							defaultValue={values.firstName}
+							onChange={handleChange('name')}
+							defaultValue={values.name}
 						/>
 						<br/>
 						<TextField 
