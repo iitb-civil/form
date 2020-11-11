@@ -4,6 +4,7 @@ import FormFamilyDetails from './FormFamilyDetails';
 import FormPersonalDetails from './FormPersonalDetails';
 import FormUserDetails from './FormUserDetails';
 import FormCases from './FormCases';
+import Success from './Success';
 // import FormPersonalDetails from './FormPersonalDetails';
 
 export class UserForm extends Component {
@@ -196,6 +197,72 @@ export class UserForm extends Component {
 			case_16,		
 		}
 
+		const cases_times = { 
+			case_1:{
+			val: 1,
+			case_a_rent:0.8,
+			case_b_rent:1.2,
+			case_a_time:[40, 30, 10, 20, 20, 15],
+			case_b_time:[20, 15, 20, 20, 10, 15]
+			},
+
+			case_2:{
+				val: 2,
+				case_a_rent:1.2,
+				case_b_rent:0.8,
+				case_a_time:[40, 15, 20, 20, 10, 15],
+				case_b_time:[20, 15, 20, 20, 20, 15]
+			},
+			
+			case_3:{
+				val: 3,
+				case_a_rent:1.2,
+				case_b_rent:1,
+				case_a_time:[40, 30, 20, 40, 20, 30],
+				case_b_time:[40, 15, 20, 40, 20, 15]
+			},
+
+			case_4:{
+				val: 4,
+				case_a_rent:1.2,
+				case_b_rent:1,
+				case_a_time:[40, 15, 10, 20, 20, 30],
+				case_b_time:[40, 15, 20, 20, 20, 15]
+			},
+
+			case_5:{
+				val: 5,
+				case_a_rent:1.2,
+				case_b_rent:1,
+				case_a_time:[40, 15, 10, 40, 20, 30],
+				case_b_time:[20, 30, 20, 20, 10, 30]
+			},
+
+			case_6:{
+				val: 6,
+				case_a_rent:0.8,
+				case_b_rent:1.2,
+				case_a_time:[40, 30, 20, 20, 10, 30],
+				case_b_time:[20, 30, 20, 20, 20, 30]
+			},
+
+			case_7:{
+				val: 7,
+				case_a_rent:1.2,
+				case_b_rent:0.8,
+				case_a_time:[40, 30, 20, 20, 20, 30],
+				case_b_time:[40, 30, 10, 40, 20, 15]
+			},
+
+			case_8:{
+				val: 8,
+				case_a_rent:1.2,
+				case_b_rent:1,
+				case_a_time:[40, 30, 10, 20, 10, 15],
+				case_b_time:[40, 15, 10, 20, 10, 30]
+			},
+
+		}
 		
 		switch(step){
 			case 1:
@@ -231,9 +298,80 @@ export class UserForm extends Component {
 						prevStep = {this.prevStep}
 						handleChange= {this.handleChange}
 						values= {values}
+						times= {cases_times.case_1}
 					/>
 				)
 			case 5:
+				return(
+					<FormCases
+						nextStep = {this.nextStep}
+						prevStep = {this.prevStep}
+						handleChange= {this.handleChange}
+						values= {values}
+						times= {cases_times.case_2}
+					/>
+				)
+			case 6:
+				return(
+					<FormCases
+						nextStep = {this.nextStep}
+						prevStep = {this.prevStep}
+						handleChange= {this.handleChange}
+						values= {values}
+						times= {cases_times.case_3}
+					/>
+				)
+			case 7:
+				return(
+					<FormCases
+						nextStep = {this.nextStep}
+						prevStep = {this.prevStep}
+						handleChange= {this.handleChange}
+						values= {values}
+						times= {cases_times.case_4}
+					/>
+				)
+			case 8:
+				return(
+					<FormCases
+						nextStep = {this.nextStep}
+						prevStep = {this.prevStep}
+						handleChange= {this.handleChange}
+						values= {values}
+						times= {cases_times.case_5}
+					/>
+				)
+			case 9:
+				return(
+					<FormCases
+						nextStep = {this.nextStep}
+						prevStep = {this.prevStep}
+						handleChange= {this.handleChange}
+						values= {values}
+						times= {cases_times.case_6}
+					/>
+				)
+			case 10:
+				return(
+					<FormCases
+						nextStep = {this.nextStep}
+						prevStep = {this.prevStep}
+						handleChange= {this.handleChange}
+						values= {values}
+						times= {cases_times.case_7}
+					/>
+				)
+			case 11:
+				return(
+					<FormCases
+						nextStep = {this.nextStep}
+						prevStep = {this.prevStep}
+						handleChange= {this.handleChange}
+						values= {values}
+						times= {cases_times.case_8}
+					/>
+				)
+			case 12:
 				return(
 					<FormConfirm 
 						nextStep = {this.nextStep}
@@ -242,11 +380,17 @@ export class UserForm extends Component {
 						values= {values}
 					/>
 				)	
-			case 6:
+			case 13:
 				return(
-					<h1>
-						Success
-					</h1>
+					<Success />
+				)
+			default:
+				return(
+					<FormUserDetails 
+						nextStep = {this.nextStep}
+						handleChange= {this.handleChange}
+						values= {values}
+					/>
 				)
 		}
 

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
-import RadioButton from 'material-ui/RadioButton';
 import { RaisedButton } from 'material-ui';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
@@ -13,7 +12,45 @@ export class FormFamilyDetails extends Component {
 	
 	continue = e => {
 		e.preventDefault();
+
+		const {job_time,
+			job_mode,
+			education_time,
+			education_mode,
+			shopping_time,
+			shopping_mode,
+			hospital_time,
+			hospital_mode,
+			resto_time,
+			resto_mode,
+			garden_time,
+			garden_mode,
+			rate_job,
+			rate_school,
+			rate_shopping,
+			rate_hospital,
+			rate_parks,
+			rate_resto,
+		} = this.props.values;
+
+		if(job_time == '' || job_mode == '' || education_time == '' || 
+		education_mode == '' || shopping_time == '' || shopping_mode == '' || hospital_time == '' || hospital_mode == '' ||
+		resto_time == '' || resto_mode == '' || garden_time == '' || garden_mode == '' || rate_job == ''||
+		rate_school == '' || rate_shopping == '' || rate_hospital == '' || rate_parks == ''|| rate_resto == ''
+		){
+			alert("Please enter all the fields");
+		}
+		else if(
+			isNaN(job_time) || isNaN(education_time) || isNaN(shopping_time) || isNaN(hospital_time) || isNaN(resto_time) ||
+			isNaN(garden_time)
+		){
+			alert("Please enter valid numeric input in the fields");
+		}
+
+		
+		else{
 		this.props.nextStep();
+		}
 	}; 
 
 	back = e => {
@@ -28,7 +65,7 @@ export class FormFamilyDetails extends Component {
 			<div>
 				<MuiThemeProvider>
 					<React.Fragment>
-						<AppBar title="Enter Travel Details Details" />
+						<AppBar title="Enter Travel Details Details"   showMenuIconButton={false} />
 						Travel time and mode details for :
 						<br/>
 						<br/>
@@ -40,6 +77,7 @@ export class FormFamilyDetails extends Component {
 							<br/>
 							
 						<TextField 
+						style={{width:500}}
 							hintText="Please enter in mins, eg. 20, 40"
 							floatingLabelText="Travel time to reach JOB/WORK"
 							onChange={handleChange('job_time')}
@@ -78,6 +116,7 @@ export class FormFamilyDetails extends Component {
 							<br/>
 							
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter in mins, eg. 20, 40"
 							floatingLabelText="Travel time to reach School/College"
 							onChange={handleChange('education_time')}
@@ -114,6 +153,7 @@ export class FormFamilyDetails extends Component {
 							<br/>
 							
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter in mins, eg. 20, 40"
 							floatingLabelText="Travel time to reach Nearest Shopping Mall/Market"
 							onChange={handleChange('shopping_time')}
@@ -150,6 +190,7 @@ export class FormFamilyDetails extends Component {
 							<br/>
 							
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter in mins, eg. 20, 40"
 							floatingLabelText="Travel time to reach Nearest Hospital"
 							onChange={handleChange('hospital_time')}
@@ -186,6 +227,7 @@ export class FormFamilyDetails extends Component {
 							<br/>
 							
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter in mins, eg. 20, 40"
 							floatingLabelText="Travel time to reach nearest Restaurants"
 							onChange={handleChange('resto_time')}
@@ -222,6 +264,7 @@ export class FormFamilyDetails extends Component {
 							<br/>
 							
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter in mins, eg. 20, 40"
 							floatingLabelText="Travel time to reach Nearest Garden"
 							onChange={handleChange('garden_time')}
@@ -263,6 +306,7 @@ export class FormFamilyDetails extends Component {
 							<br/>
 							
 						<TextField 
+							style={{fontSize:20, fontWeight:'bold', width:400}}
 							floatingLabelText="House Locality nearer to Job/Workplace"
 							disabled={true}					
 						/>
@@ -272,9 +316,11 @@ export class FormFamilyDetails extends Component {
 						<InputLabel htmlFor="agegrp-native-simple">Rating out of 10</InputLabel>
 						
 						<Select
+							style={{width:300}}
 							native
 							value={values.rate_job}
 							onChange={handleChange('rate_job')}
+							style={{width:300}}
 						>
 							<option aria-label="None" value="" />
 							<option value={1}>1</option>
@@ -299,6 +345,7 @@ export class FormFamilyDetails extends Component {
 						<TextField 
 							floatingLabelText="House Locality nearer to Good Schools"
 							disabled={true}
+							style={{fontSize:20, fontWeight:'bold', width:400}}
 						/>
 						</FormControl>
 							
@@ -309,6 +356,7 @@ export class FormFamilyDetails extends Component {
 							native
 							value={values.rate_school}
 							onChange={handleChange('rate_school')}
+							style={{width:300}}
 							
 						>
 							<option aria-label="None" value="" />
@@ -334,6 +382,7 @@ export class FormFamilyDetails extends Component {
 							
 						<TextField 
 							floatingLabelText="House Locality nearer to Shopping Marketplace"
+							style={{fontSize:20, fontWeight:'bold', width:400}}
 							disabled={true}
 						/>
 						</FormControl>
@@ -345,6 +394,7 @@ export class FormFamilyDetails extends Component {
 							native
 							value={values.rate_shopping}
 							onChange={handleChange('rate_shopping')}
+							style={{width:300}}
 							
 						>
 							<option aria-label="None" value="" />
@@ -370,6 +420,7 @@ export class FormFamilyDetails extends Component {
 						<TextField 
 							floatingLabelText="House Locality nearer to Hospitals"
 							disabled={true}
+							style={{fontSize:20, fontWeight:'bold', width:400}}
 						/>
 						</FormControl>
 							
@@ -380,6 +431,7 @@ export class FormFamilyDetails extends Component {
 							native
 							value={values.rate_hospital}
 							onChange={handleChange('rate_hospital')}
+							style={{width:300}}
 							
 						>
 							<option aria-label="None" value="" />
@@ -405,6 +457,7 @@ export class FormFamilyDetails extends Component {
 						<TextField 
 							floatingLabelText="House Locality nearer to Parks and Gardens"
 							disabled={true}
+							style={{fontSize:20, fontWeight:'bold', width:400}}
 						/>
 						</FormControl>
 							
@@ -415,6 +468,7 @@ export class FormFamilyDetails extends Component {
 							native
 							value={values.rate_parks}
 							onChange={handleChange('rate_parks')}
+							style={{width:300}}
 							
 						>
 							<option aria-label="None" value="" />
@@ -440,6 +494,7 @@ export class FormFamilyDetails extends Component {
 						<TextField 
 							floatingLabelText="House Locality nearer to Good Restaurants"
 							disabled={true}
+							style={{fontSize:20, fontWeight:'bold', width:400}}
 						/>
 						</FormControl>
 							
@@ -450,7 +505,7 @@ export class FormFamilyDetails extends Component {
 							native
 							value={values.rate_resto}
 							onChange={handleChange('rate_resto')}
-							
+							style={{width:300}}
 						>
 							<option aria-label="None" value="" />
 							<option value={1}>1</option>

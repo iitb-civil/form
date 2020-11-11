@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import TextField from 'material-ui/TextField';
-import RadioButton from 'material-ui/RadioButton';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import { RaisedButton } from 'material-ui';
@@ -12,7 +11,44 @@ export class FormPersonalDetails extends Component {
 	
 	continue = e => {
 		e.preventDefault();
+
+		const {house_ownership, monthly_rent, occupation,
+			area,
+			address,
+			family_members,
+			num_adults,
+			num_working_male,
+			num_working_female,
+			num_two_license_male,
+			num_two_license_female,
+			num_four_license_male,
+			num_four_license_female,
+			num_two_motarized_license_male,
+			num_two_veh,
+			num_four_veh,
+			age_grp,
+			monthly_income,
+			education_level,} = this.props.values;
+
+
+		if(house_ownership == '' || monthly_rent == '' || area == '' || 
+		family_members == '' || num_adults == '' || num_working_male == '' || num_working_female == '' || num_two_license_male == '' ||
+		num_two_license_female == '' || num_four_license_male == '' || num_four_license_female == '' || num_two_veh == '' || num_four_veh == ''||
+		age_grp == '' || occupation == '' || monthly_income == '' || education_level == '' 
+		){
+			alert("Please enter all the fields");
+		}
+		else if(
+			isNaN(monthly_rent) || isNaN(family_members) || isNaN(num_adults) || isNaN(num_working_male) || isNaN(num_working_female) ||
+			isNaN(num_two_license_male) || isNaN(num_two_license_female) || isNaN(num_four_license_male) || isNaN(num_four_license_female) || isNaN(num_two_veh) || isNaN(num_four_veh)
+		){
+			alert("Please enter valid numeric input in the fields");
+		}
+
+
+		else{
 		this.props.nextStep();
+		}
 	}; 
 
 	back = e => {
@@ -27,10 +63,12 @@ export class FormPersonalDetails extends Component {
 			<div>
 				<MuiThemeProvider>
 					<React.Fragment>
-						<AppBar title="Please Enter Personal Details" />
+						<AppBar title="General information"  showMenuIconButton={false} />
 						<br/>
+						<FormControl style={{width:500}}>
 						<FormControl>
-						<InputLabel htmlFor="ownership-native-simple">House Ownership</InputLabel>
+							Family Household Details
+						<InputLabel htmlFor="ownership-native-simple" style={{marginTop:20}}>Type of your House Ownership</InputLabel>
 						<Select
 							native
 							value={values.house_ownership}
@@ -46,8 +84,9 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter in digits"
-							floatingLabelText="Approx. monthly house rental value"
+							floatingLabelText="Approx. monthly house rental value in Rs."
 							onChange={handleChange('monthly_rent')}
 							defaultValue={values.monthly_rent}
 						/>
@@ -58,6 +97,7 @@ export class FormPersonalDetails extends Component {
 						<FormControl>
 						<br/>
 						<TextField 
+							style={{width:500}}	
 							hintText="Area / Locality eg. POWAI, MALAD"
 							floatingLabelText="Area or Locality of your house"
 							onChange={handleChange('area')}
@@ -69,8 +109,9 @@ export class FormPersonalDetails extends Component {
 						<FormControl>
 						<br/>
 						<TextField 
-							hintText="Address"
-							floatingLabelText="Address"
+							style={{width:500}}
+							hintText="Address "
+							floatingLabelText="Address (Optional)"
 							onChange={handleChange('address')}
 							defaultValue={values.address}
 						/>
@@ -79,6 +120,7 @@ export class FormPersonalDetails extends Component {
 						<FormControl>
 						<br/>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 4, 5"
 							floatingLabelText="Number of Family Members"
 							onChange={handleChange('family_members')}
@@ -88,6 +130,7 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Adults in Family (>18yr)"
 							onChange={handleChange('num_adults')}
@@ -97,6 +140,7 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Working Male Adults"
 							onChange={handleChange('num_working_male')}
@@ -107,6 +151,7 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Working Female Adults"
 							onChange={handleChange('num_working_female')}
@@ -117,6 +162,7 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Two wheeler licence - Male"
 							onChange={handleChange('num_two_license_male')}
@@ -127,6 +173,7 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Two wheeler licence - Female"
 							onChange={handleChange('num_two_license_female')}
@@ -137,6 +184,7 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Four wheeler licence - Male"
 							onChange={handleChange('num_four_license_male')}
@@ -147,6 +195,7 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Four wheeler licence - Female"
 							onChange={handleChange('num_four_license_female')}
@@ -159,6 +208,7 @@ export class FormPersonalDetails extends Component {
 						<FormControl>
 						Number of vehicles
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Two wheelers"
 							onChange={handleChange('num_two_veh')}
@@ -169,6 +219,7 @@ export class FormPersonalDetails extends Component {
 						<br/>
 						<FormControl>
 						<TextField 
+							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
 							floatingLabelText="Number of Four wheelers"
 							onChange={handleChange('num_four_veh')}
@@ -254,6 +305,7 @@ export class FormPersonalDetails extends Component {
 							<option value={3}>Till 12th / Diploma</option>
 							<option value={4}>Illiterate</option>
 						</Select>
+						</FormControl>
 						</FormControl>
 						<br/>
 
