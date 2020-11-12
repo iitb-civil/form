@@ -90,7 +90,7 @@ export class FormFamilyDetails extends Component {
 						<TextField 
 						style={{width:500}}
 							hintText="Please enter in mins, eg. 20, 40"
-							floatingLabelText="Travel time to reach JOB/WORK"
+							floatingLabelText="Travel time to reach your JOB/WORK"
 							onChange={handleChange('job_time')}
 							defaultValue={values.job_time}
 						/>
@@ -354,7 +354,7 @@ export class FormFamilyDetails extends Component {
 						/> */}
 
 						<Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
-						House Locality nearer to Job/Workplace = 
+						House Locality near your Job/Workplace = 
 						
 						</Typography>
 						</FormControl>
@@ -569,7 +569,7 @@ export class FormFamilyDetails extends Component {
 							style={{fontSize:20, fontWeight:'bold', width:400}}
 						/> */}
 						<Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
-					 		House Locality nearer to Parks and Gardens = 
+							House Locality nearer to Good Restaurants = 
 						
 						</Typography>
 
