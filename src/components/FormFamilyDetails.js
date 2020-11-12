@@ -6,6 +6,7 @@ import { RaisedButton } from 'material-ui';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
 import FormControl from '@material-ui/core/FormControl';
+import Typography from '@material-ui/core/Typography';
 
 
 export class FormFamilyDetails extends Component {
@@ -65,7 +66,17 @@ export class FormFamilyDetails extends Component {
 			<div>
 				<MuiThemeProvider>
 					<React.Fragment>
-						<AppBar title="Enter Travel Details Details"   showMenuIconButton={false} />
+						<AppBar title="Enter Travel Details"   showMenuIconButton={false} />
+						<Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
+						In this table, the respondent has to fill the travel time and select the primary travel mode for
+						different services.<br/> (E.g., what is the travel time and primary mode of travel for school/college for a
+						member of the respondent’s family; if no member of the respondent’s family uses the service, then
+						the respondent may report the travel time to the nearest service).<br/> Please fill the table as per your
+						travel pattern in<span style={{fontWeight:'bold'}}> January 2020 (Pre-COVID situation)</span>.
+						</Typography>
+						<br/>
+						<br/>
+						
 						Travel time and mode details for :
 						<br/>
 						<br/>
@@ -108,6 +119,10 @@ export class FormFamilyDetails extends Component {
 
 
 						<br/>
+						<br/>
+
+						<br/>
+						<br/>
 						<center>
 						2. Education School/College
 						</center>
@@ -145,6 +160,13 @@ export class FormFamilyDetails extends Component {
 						</FormControl>
 						<br/>
 						<br/>
+
+						<br/>
+						<br/>
+
+						<br/>
+						<br/>
+
 						<center>
 						3. Nearest Shopping Mall / Market
 						</center>
@@ -180,6 +202,13 @@ export class FormFamilyDetails extends Component {
 							<option value={7}>Walk</option>
 						</Select>
 						</FormControl>
+						<br/>
+						<br/>
+
+
+						<br/>
+						<br/>
+
 						<br/>
 						<br/>
 						<center>
@@ -219,6 +248,12 @@ export class FormFamilyDetails extends Component {
 						</FormControl>
 						<br/>
 						<br/>
+
+						<br/>
+						<br/>
+
+						<br/>
+						<br/>
 						<center>
 						5. Restaurants
 						</center>
@@ -254,6 +289,11 @@ export class FormFamilyDetails extends Component {
 							<option value={7}>Walk</option>
 						</Select>
 						</FormControl>
+						<br/>
+						<br/>
+						<br/>
+						<br/>
+
 						<br/>
 						<br/>
 						<center>
@@ -295,24 +335,31 @@ export class FormFamilyDetails extends Component {
 
 						<br/>
 						<br/>
-						On a Scale of 1-10 Kindly rate for the services in accordance to their imporatnce
+						Please rate on a scale of 1 to 10, where 10 means &quot;extremely important&quot; and 1 means &quot;not at all
+						important&quot; for the following services <span style={{textDecorationLine: 'underline'}}> in choosing a housing locality.</span>
 						<br/>
-						<br/>						
-						1 - Not important &nbsp;
-						10 - Extremely Important
+						<br/><span style={{fontWeight:'bold'}}>
+						1 </span> - <span style={{textDecorationLine: 'underline'}}>Not important</span> &nbsp;
+						<span style={{fontWeight:'bold'}}>
+						10 </span>- <span style={{textDecorationLine: 'underline'}}> Extremely Important</span>
 						<br/>
 						<FormControl>
 							
 							<br/>
 							
-						<TextField 
+						{/* <TextField 
 							style={{fontSize:20, fontWeight:'bold', width:400}}
 							floatingLabelText="House Locality nearer to Job/Workplace"
 							disabled={true}					
-						/>
+						/> */}
+
+						<Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
+						House Locality nearer to Job/Workplace = 
+						
+						</Typography>
 						</FormControl>
 							
-						<FormControl style={{marginLeft:50, marginTop:33}}>
+						<FormControl style={{marginLeft:20, marginTop:50}}>
 						<InputLabel htmlFor="agegrp-native-simple">Rating out of 10</InputLabel>
 						
 						<Select
@@ -342,14 +389,21 @@ export class FormFamilyDetails extends Component {
 							
 							<br/>
 							
-						<TextField 
+						{/* <TextField 
 							floatingLabelText="House Locality nearer to Good Schools"
 							disabled={true}
 							style={{fontSize:20, fontWeight:'bold', width:400}}
-						/>
+						/> */}
+
+						<Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
+							House Locality nearer to Good Schools = 
+						
+						</Typography>
+
+
 						</FormControl>
 							
-						<FormControl style={{marginLeft:50, marginTop:33}}>
+						<FormControl style={{marginLeft:20, marginTop:50}}>
 						<InputLabel htmlFor="agegrp-native-simple">Rating out of 10</InputLabel>
 						
 						<Select
@@ -380,14 +434,22 @@ export class FormFamilyDetails extends Component {
 							
 							<br/>
 							
-						<TextField 
+						{/* <TextField 
 							floatingLabelText="House Locality nearer to Shopping Marketplace"
 							style={{fontSize:20, fontWeight:'bold', width:400}}
 							disabled={true}
-						/>
+						/> */}
+
+						
+						<Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
+						House Locality nearer to Shopping Marketplace = 
+						
+						</Typography>
+
+
 						</FormControl>
 							
-						<FormControl style={{marginLeft:50, marginTop:33}}>
+						<FormControl style={{marginLeft:20, marginTop:50}}>
 						<InputLabel htmlFor="agegrp-native-simple">Rating out of 10</InputLabel>
 						
 						<Select
@@ -417,14 +479,15 @@ export class FormFamilyDetails extends Component {
 							
 							<br/>
 							
-						<TextField 
-							floatingLabelText="House Locality nearer to Hospitals"
-							disabled={true}
-							style={{fontSize:20, fontWeight:'bold', width:400}}
-						/>
+						<Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
+						House Locality nearer to Hospitals = 
+						
+						</Typography>
+
+
 						</FormControl>
 							
-						<FormControl style={{marginLeft:50, marginTop:33}}>
+						<FormControl style={{marginLeft:20, marginTop:50}}>
 						<InputLabel htmlFor="agegrp-native-simple">Rating out of 10</InputLabel>
 						
 						<Select
@@ -454,14 +517,23 @@ export class FormFamilyDetails extends Component {
 							
 							<br/>
 							
-						<TextField 
+						{/* <TextField 
 							floatingLabelText="House Locality nearer to Parks and Gardens"
 							disabled={true}
 							style={{fontSize:20, fontWeight:'bold', width:400}}
-						/>
+						/> */}
+
+
+						
+					 <Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
+					 House Locality nearer to Parks and Gardens = 
+						
+						</Typography>
+
+
 						</FormControl>
 							
-						<FormControl style={{marginLeft:50, marginTop:33}}>
+						<FormControl style={{marginLeft:20, marginTop:50}}>
 						<InputLabel htmlFor="agegrp-native-simple">Rating out of 10</InputLabel>
 						
 						<Select
@@ -491,14 +563,20 @@ export class FormFamilyDetails extends Component {
 							
 							<br/>
 							
-						<TextField 
+						{/* <TextField 
 							floatingLabelText="House Locality nearer to Good Restaurants"
 							disabled={true}
 							style={{fontSize:20, fontWeight:'bold', width:400}}
-						/>
+						/> */}
+						<Typography variant="body2" color="textPrimary" component="p" style={{fontSize:20, padding:50}}>
+					 		House Locality nearer to Parks and Gardens = 
+						
+						</Typography>
+
+
 						</FormControl>
 							
-						<FormControl style={{marginLeft:50, marginTop:33}}>
+						<FormControl style={{marginLeft:20, marginTop:50}}>
 						<InputLabel htmlFor="agegrp-native-simple">Rating out of 10</InputLabel>
 						
 						<Select
