@@ -117,18 +117,23 @@ export class FormCases extends Component {
 											<Typography variant="body2" color={ is_bold_1? "textPrimary": "textSecondary"} component="p">
 												Travel Time to work by {dict[values.job_mode]} : {times.case_a_time[0]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_2? "textPrimary": "textSecondary"} component="p">
 												Travel Time to School/College by {dict[values.education_mode]} : {times.case_a_time[1]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_3? "textPrimary": "textSecondary"} component="p">
 												Travel Time to Shopping by {dict[values.shopping_mode]} : {times.case_a_time[2]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_4? "textPrimary": "textSecondary"} component="p">
 												Travel Time to Hospital by {dict[values.hospital_mode]} : {times.case_a_time[3]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_5? "textPrimary": "textSecondary"} component="p">
 												Travel Time to Park by {dict[values.resto_mode]} : {times.case_a_time[4]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_6? "textPrimary": "textSecondary"} component="p">
 												Travel Time to Good Restaurant by {dict[values.garden_mode]} : {times.case_a_time[5]}mins
 											</Typography>
@@ -157,18 +162,23 @@ export class FormCases extends Component {
 												<Typography variant="body2" color={ is_bold_1? "textPrimary": "textSecondary"} component="p">
 												Travel Time to work by {dict[values.job_mode]} : {times.case_b_time[0]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_2? "textPrimary": "textSecondary"} component="p">
 												Travel Time to School/College by {dict[values.education_mode]} : {times.case_b_time[1]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_3? "textPrimary": "textSecondary"} component="p">
 												Travel Time to Shopping by {dict[values.shopping_mode]} : {times.case_b_time[2]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_4? "textPrimary": "textSecondary"} component="p">
 												Travel Time to Hospital by {dict[values.hospital_mode]} : {times.case_b_time[3]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_5? "textPrimary": "textSecondary"} component="p">
 												Travel Time to Park by {dict[values.resto_mode]} : {times.case_b_time[4]}mins
 											</Typography>
+											<br/>
 											<Typography variant="body2" color={ is_bold_6? "textPrimary": "textSecondary"} component="p">
 												Travel Time to Good Restaurant by {dict[values.garden_mode]} : {times.case_b_time[5]}mins
 											</Typography>
