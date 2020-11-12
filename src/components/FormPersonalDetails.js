@@ -32,8 +32,8 @@ export class FormPersonalDetails extends Component {
 
 
 		if(house_ownership == '' || monthly_rent == '' || area == '' || 
-		family_members == '' || num_adults == '' || num_working_male == '' || num_working_female == '' || num_two_license_male == '' ||
-		num_two_license_female == '' || num_four_license_male == '' || num_four_license_female == '' || num_two_veh == '' || num_four_veh == ''||
+		family_members == '' || num_adults == '' || num_working_male == '' || num_working_female == '' || 
+		num_two_veh == '' || num_four_veh == ''||
 		age_grp == '' || occupation == '' || monthly_income == '' || education_level == '' 
 		){
 			alert("Please enter all the fields");
@@ -164,7 +164,7 @@ export class FormPersonalDetails extends Component {
 						<TextField 
 							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
-							floatingLabelText="Number of Two wheeler licence - Male"
+							floatingLabelText="Number of Two wheeler licence - Male (Optional)"
 							onChange={handleChange('num_two_license_male')}
 							required={1}
 							defaultValue={values.num_two_license_male}
@@ -175,7 +175,7 @@ export class FormPersonalDetails extends Component {
 						<TextField 
 							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
-							floatingLabelText="Number of Two wheeler licence - Female"
+							floatingLabelText="Number of Two wheeler licence - Female (Optional)"
 							onChange={handleChange('num_two_license_female')}
 							required={1}
 							defaultValue={values.num_two_license_female}
@@ -186,7 +186,7 @@ export class FormPersonalDetails extends Component {
 						<TextField 
 							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
-							floatingLabelText="Number of Four wheeler licence - Male"
+							floatingLabelText="Number of Four wheeler licence - Male (Optional)"
 							onChange={handleChange('num_four_license_male')}
 							required={1}
 							defaultValue={values.num_four_license_male}
@@ -197,7 +197,7 @@ export class FormPersonalDetails extends Component {
 						<TextField 
 							style={{width:500}}
 							hintText="Please enter digits, eg. 1, 2"
-							floatingLabelText="Number of Four wheeler licence - Female"
+							floatingLabelText="Number of Four wheeler licence - Female (Optional)"
 							onChange={handleChange('num_four_license_female')}
 							required={1}
 							defaultValue={values.num_four_license_female}
