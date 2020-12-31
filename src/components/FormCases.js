@@ -111,7 +111,7 @@ export class FormCases extends Component {
 											<br/>
 											<br/>
 											<Typography variant="body2" color="textPrimary" component="p">
-												Monthly Rent : Rs. {Math.round(times.case_a_rent*values.monthly_rent)}
+											Monthly Rent : Rs. {Math.max(Math.round((times.case_a_rent*values.monthly_rent/1000)*1000), 10000)}
 											</Typography>
 											<br/>
 											<Typography variant="body2" color={ is_bold_1? "textPrimary": "textSecondary"} component="p">
@@ -156,7 +156,7 @@ export class FormCases extends Component {
 												<br/>
 												<br/>
 												<Typography variant="body2" color="textPrimary" component="p">
-													Monthly Rent : Rs. {Math.round(times.case_b_rent*values.monthly_rent)}
+												Monthly Rent : Rs. {Math.max(Math.round((times.case_b_rent*values.monthly_rent/1000)*1000), 10000)}
 												</Typography>
 												<br/>
 												<Typography variant="body2" color={ is_bold_1? "textPrimary": "textSecondary"} component="p">
