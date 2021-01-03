@@ -16,7 +16,7 @@ export class FormConfirm extends Component {
 	continue = e => {
 		e.preventDefault();
 
-		const url = "https://script.google.com/macros/s/AKfycbyzhx-yHbCxVVbAN5i6iy48vGdBBr8yhBs5sDLqOJHPOsRiEmM/exec";
+		const url = "https://script.google.com/macros/s/AKfycbx4uFYW-EOR4eNiTeMxVWEercx70OAWVj8rzQpcKPMifAUUqazYNVZO/exec";
 		
 		const val = this.props.values;
 

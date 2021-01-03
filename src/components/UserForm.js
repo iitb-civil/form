@@ -69,6 +69,7 @@ export class UserForm extends Component {
 		case_14:'',
 		case_15:'',
 		case_16:'',
+		type_of_house:'',
 	}
 
 
@@ -143,6 +144,7 @@ export class UserForm extends Component {
 			case_14,
 			case_15,
 			case_16,
+			type_of_house,
 		 } = this.state; 
 		const values = { name, mobile, email, occupation, city, bio, house_ownership, monthly_rent,
 			area,
@@ -194,7 +196,8 @@ export class UserForm extends Component {
 			case_13,
 			case_14,
 			case_15,
-			case_16,		
+			case_16,
+			type_of_house,		
 		}
 
 		const cases_times = { 

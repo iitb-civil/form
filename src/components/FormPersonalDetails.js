@@ -28,13 +28,15 @@ export class FormPersonalDetails extends Component {
 			num_four_veh,
 			age_grp,
 			monthly_income,
-			education_level,} = this.props.values;
+			education_level,
+			type_of_house,
+		} = this.props.values;
 
 
 		if(house_ownership == '' || monthly_rent == '' || area == '' || 
 		family_members == '' || num_adults == '' || num_working_male == '' || num_working_female == '' || 
 		num_two_veh == '' || num_four_veh == ''||
-		age_grp == '' || occupation == '' || monthly_income == '' || education_level == '' 
+		age_grp == '' || occupation == '' || monthly_income == '' || education_level == '' || type_of_house == ''
 		){
 			alert("Please enter all the fields");
 		}
@@ -81,6 +83,27 @@ export class FormPersonalDetails extends Component {
 						</Select>
 						<br/>
 						</FormControl>
+
+
+						<FormControl>
+						<InputLabel htmlFor="agegrp-native-simple">Type of House</InputLabel>
+						
+						<Select
+							native
+							value={values.type_of_house}
+							onChange={handleChange('type_of_house')}
+							
+						>
+							<option aria-label="None" value="" />
+							<option value={1}>&nbsp;&nbsp; 1 RK (one Room Kitchen)</option>
+							<option value={2}>&nbsp;&nbsp; 1 BHK (one Bedroom Hall Kitchen)</option>
+							<option value={3}>&nbsp;&nbsp; 2 BHK </option>
+							<option value={4}>&nbsp;&nbsp; 2+ BHK (more than 2 Bedroom Hall Kitchen)</option>
+						</Select>
+						</FormControl>
+						
+
+
 						<br/>
 						<FormControl>
 						<TextField 
